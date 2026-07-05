@@ -1,7 +1,6 @@
 import 'package:dio/dio.dart';
 
 import 'models/enums.dart';
-import 'models/weather_alert.dart';
 import 'models/weather_data.dart';
 import 'token.dart';
 
@@ -127,7 +126,7 @@ class WeatherKit {
     };
 
     final response = await _dio.get(
-      '/weather/$language/environment/${latitude}/${longitude}',
+      '/weather/$latitude/$longitude',
       queryParameters: queryParams,
       options: Options(
         headers: {

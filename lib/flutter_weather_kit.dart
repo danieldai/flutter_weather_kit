@@ -30,7 +30,6 @@
 ///   countryCode: 'US',
 /// );
 /// ```
-library flutter_weather_kit;
 
 export 'src/models/current_weather.dart';
 export 'src/models/daily_forecast.dart';
