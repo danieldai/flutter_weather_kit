@@ -1,9 +1,9 @@
 name: flutter_weather_kit
 description: A Flutter package for Apple WeatherKit REST API. Provides current weather, daily/hourly forecasts, next-hour precipitation, and weather alerts.
 version: 1.0.0
-homepage: https://github.com/kissshell/flutter_weather_kit
-repository: https://github.com/kissshell/flutter_weather_kit
-issue_tracker: https://github.com/kissshell/flutter_weather_kit/issues
+homepage: https://github.com/danieldai/flutter_weather_kit
+repository: https://github.com/danieldai/flutter_weather_kit
+issue_tracker: https://github.com/danieldai/flutter_weather_kit/issues
 license: MIT
 
 topics:
