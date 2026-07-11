@@ -30,6 +30,7 @@
 ///   countryCode: 'US',
 /// );
 /// ```
+library;
 
 export 'src/models/current_weather.dart';
 export 'src/models/daily_forecast.dart';
