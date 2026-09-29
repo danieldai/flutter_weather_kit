@@ -18,6 +18,10 @@ class WeatherKitConfig {
   /// Private key in PEM format.
   final String privateKeyPem;
 
+  /// Optional externally issued developer token provider.
+  /// When supplied, the client never signs a token from local key material.
+  final Future<String> Function()? tokenProvider;
+
   /// API base URL. Defaults to Apple's production endpoint.
   final String baseUrl;
 
@@ -32,6 +36,7 @@ class WeatherKitConfig {
     required this.keyId,
     required this.serviceId,
     required this.privateKeyPem,
+    this.tokenProvider,
     this.baseUrl = 'https://weatherkit.apple.com/api/v1',
     this.language = 'en_US',
     this.timezone = 'America/New_York',
@@ -74,6 +79,10 @@ class WeatherKit {
 
   /// Get a valid JWT token, caching it until near expiry.
   Future<String> _getToken() async {
+    final tokenProvider = config.tokenProvider;
+    if (tokenProvider != null) {
+      return tokenProvider();
+    }
     if (_cachedToken != null &&
         _tokenExpiry != null &&
         DateTime.now().isBefore(_tokenExpiry!)) {
